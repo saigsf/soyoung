@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
     <title>it`s my project</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/response.css" />
@@ -47,43 +48,80 @@
     <section>
         <div class="page page1" id="page1">
             <div class="container">
-                <div class="sider">
-                    <div class="inner">
-                        <img src="img/1493965831511.jpg" alt="">
+                <div class="carousel">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-item">
+                            <img src="img/1493965831511.jpg" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/1493966356359.jpg" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/1493967233565.jpg" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/1493967756590.jpg" alt="">
+                        </div>
+
                     </div>
-                    <div class="inner">
-                        <img src="img/1493966356359.jpg" alt="">
+                    <div class="ctrlBtn">
+                        <div class="leftBtn">
+                            <span>
+                                <i class="fa fa-angle-left"></i>
+                            </span>
+                        </div>
+                        <div class="rightBtn">
+                            <span>
+                                <i class="fa fa-angle-right"></i>
+                            </span>
+                        </div>
                     </div>
-                    <div class="inner">
-                        <img src="img/1493967233565.jpg" alt="">
+                    <div class="spot">
+                        <ol>
+                            <li class="cur"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ol>
                     </div>
-                    <div class="inner">
-                        <img src="img/1493967756590.jpg" alt="">
-                    </div>
+
                 </div>
-                <div class="btnLeft">
-                    <span>
-                        <i class="fa fa-angle-left"></i>
-                    </span>
-                </div>
-                <div class="btnRight">
-                    <span>
-                        <i class="fa fa-angle-right"></i>
-                    </span>
+            </div>
+        </div>
+        <div class="page page2" id="page2">
+            <div class="container">
+                <div class="pageTitle">
+                    <h2>关于我</h2>
                 </div>
 
             </div>
         </div>
-        <div class="page page2" id="page2">
+        <div class="page page3" id="page3">
+            <div class="container">
+                <div class="pageTitle">
+                    <h2>我的技能</h2>
+                </div>
+
+            </div>
+        </div>
+        <div class="page page4" id="page4">
+            <div class="container-fluid">
+                <div class="pageTitle">
+                    <h2>我做过的</h2>
+                </div>
+                <div class="items">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 ">ddd</div>
+                    </div>
+                </div>
+            </div>
 
         </div>
-        <div class="page page3" id="page3"></div>
-        <div class="page page4" id="page4"></div>
         <div class="page pageLast" id="pageLast">
             <div class="container">
                 <div class="row">
                     <div class="mecol-lg-10 mecol-md-10 mecol-sm-10 mecol-xs-10">
-                        <div class="title">
+                        <div class="pageTitle">
                             <h2>联系我</h2>
                         </div>
                     </div>
@@ -215,9 +253,12 @@
     <script src="js/jquery-3.1.1.min.js"></script>
     <!--Zepto-->
     <script src="js/zepto.min.js"></script>
+    <!-- bootstrap -->
+    <script src="js/bootstrap.js"></script>
     <!--源自颗粒插件-->
     <!--<script src="js/particles.min.js"></script>
     <script src="js/app.js"></script>-->
+    <script src="js/ThePlugInMapCarousel.js"></script>
     <!--my js文件-->
     <script src="js/response.js"></script>
     <script src="js/soyoung.js"></script>

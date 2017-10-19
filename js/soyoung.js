@@ -6,6 +6,7 @@ $(function() {
     showSideBar();
     message();
     edition();
+    topCarousel();
 
 });
 
@@ -178,4 +179,16 @@ function edition() {
 
     })
 
+}
+
+function topCarousel() {
+    carousel({
+        el: $(".carousel"),
+        b: 1,
+        e: 5000,
+        isCtrl: {
+            isLR: false,
+            isSpot: false
+        }
+    });
 }

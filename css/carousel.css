@@ -1,0 +1,91 @@
+.carousel {
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	position: relative;
+}
+
+.carousel img {
+	width: 100%;
+	height: 100%;
+}
+
+.carousel-wrapper {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	/* overflow: hidden; */
+}
+
+.carousel-item {
+	display: block;
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+.inner {
+	transition: all 1s ease 0s;
+	/* transform: rotateY(90deg) */
+}
+
+.ctrlBtn{
+	
+	width: 80%;
+	height: 60px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50% ,-50%);
+	-webkit-transform: translate(-50% ,-50%);
+}
+
+.ctrlBtn .leftBtn{
+	width: 40px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	float: left;
+	font-size: 60px;
+	cursor: pointer;
+	
+	
+}
+.ctrlBtn .rightBtn{
+	width: 40px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	float: right;
+	font-size: 60px;
+	cursor: pointer;
+}
+
+.spot{
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translate(-50% ,-50%);
+}
+.spot ol{
+	overflow: hidden;
+}
+.spot ol li{
+	float: left;
+	width: 10px;
+	height: 10px;
+	border-radius:50% ;
+	background-color: white;
+	margin: 0 5px;
+}
+.spot ol li.cur{
+	background-color: #000000;
+}
