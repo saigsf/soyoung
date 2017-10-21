@@ -1,12 +1,15 @@
 $(window).scrollTop(0);
 $(function() {
+    // swiperFun()
+
     // 返回顶部方法调用
-    toTop();
+    // toTop();
     // 隐藏栏显示
     showSideBar();
     message();
     edition();
     topCarousel();
+    rolling();
 
 });
 
@@ -14,14 +17,23 @@ function toTop() {
 
     var toTopBtn = document.querySelector("#toTop");
 
-    $(window).scroll(function() {
+    // $(window).scroll(function() {
 
-        if ($(window).scrollTop() > 400) {
-            toTopBtn.parentNode.style.opacity = 1;
-        } else {
-            toTopBtn.parentNode.style.opacity = 0;
-        }
-    });
+    //     if ($(window).scrollTop() > 400) {
+    //         toTopBtn.parentNode.style.opacity = 1;
+    //     } else {
+    //         toTopBtn.parentNode.style.opacity = 0;
+    //     }
+    // });
+
+    var top = parseInt($(".pageBox").css('top'));
+
+    if (top < -$(".pageBox").height()) {
+        toTopBtn.parentNode.style.opacity = 1;
+    } else {
+        toTopBtn.parentNode.style.opacity = 0;
+    }
+
     var lock = true;
     var timer = null;
     toTopBtn.addEventListener("click", function() {
@@ -168,7 +180,7 @@ function message() {
 }
 
 function edition() {
-    $(".top-logo .logo").click(function() {
+    $(".top-logo a").click(function() {
         console.log($("#white").attr('href'))
         if (!$("#white").attr('href')) {
             $("#white").attr('href', 'css/bwhite.css');
@@ -191,4 +203,77 @@ function topCarousel() {
             isSpot: false
         }
     });
+}
+
+function rolling() {
+
+    let $pageBox = $(".pageBox");
+    let nowPage = 0;
+    let lock = true;
+    $(document).mousewheel(function(e, delta) {
+        toTop()
+        if (!lock) {
+            return;
+        }
+        nowPage -= delta
+        pageMove($pageBox, nowPage);
+        lock = false;
+        /*函数节流，知道两秒钟后，才能执行该函数*/
+        setTimeout(function() {
+            lock = true;
+        }, 1000);
+    });
+    $(window).keyup(function(e) {
+        if (!lock) {
+            return;
+        }
+        console.log(e.keyCode)
+        switch (e.keyCode) {
+            case 38:
+                nowPage--;
+                pageMove($pageBox, nowPage);
+                break;
+            case 40:
+                nowPage++;
+                pageMove($pageBox, nowPage);
+                break;
+            case 123:
+
+                break;
+
+            default:
+                break;
+        }
+        lock = false;
+        /*函数节流，知道两秒钟后，才能执行该函数*/
+        setTimeout(function() {
+            lock = true;
+        }, 1000);
+    })
+}
+
+function pageMove(obj, page) {
+    if (page < 0) {
+        page = 0;
+    }
+    if (page > 4) {
+        page = 4;
+    }
+    //让container进行动画 
+    //方法一使用css样式 
+    obj.css('top', -page * 100 + "%");
+    //方法二 使用运动框架
+    // $container.animate({
+    //     "top": -nowPage * 100 + "%"
+    // }, 1000);
+
+
+    obj.children(".page").each(function(i) {
+        console.log(i, page)
+        if (i == page) {
+            $(this).delay(1000).addClass("ani-slide")
+        }
+    })
+
+    // obj.children(".page")[page].find(".ani")
 }

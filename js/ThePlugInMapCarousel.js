@@ -51,7 +51,7 @@ function carousel(data) {
         // 宽和高
         c = el.width();
         d = el.height();
-        console.log()
+        // console.log()
 
 
     }
@@ -63,7 +63,7 @@ function carousel(data) {
     // 运动模式
     var moveModule = {
         toLeft: function(o, newIndex, oldIndex) {
-            console.log(newIndex, oldIndex);
+            // console.log(newIndex, oldIndex);
             o.eq(newIndex).css({
                 "left": c,
                 "display": "block"
