@@ -261,19 +261,18 @@ function pageMove(obj, page) {
     }
     //让container进行动画 
     //方法一使用css样式 
-    obj.css('top', -page * 100 + "%");
+    obj.css('top', -page * 100 + "%")
+        .children(".page").each(function(i) {
+            console.log(i, page)
+            if (i == page) {
+                $(this).addClass("ani-slide")
+            }
+        })
+
     //方法二 使用运动框架
     // $container.animate({
     //     "top": -nowPage * 100 + "%"
     // }, 1000);
-
-
-    obj.children(".page").each(function(i) {
-        console.log(i, page)
-        if (i == page) {
-            $(this).delay(1000).addClass("ani-slide")
-        }
-    })
 
     // obj.children(".page")[page].find(".ani")
 }

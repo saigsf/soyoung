@@ -87,7 +87,7 @@ header nav ul li a {
     height: 100%;
     border-bottom: 1px solid #666;
     box-sizing: border-box;
-    transition: all 1s ease-in-out 0;
+    transition: all 0.6s linear 0;
 }
 
 .page:nth-child(2n+1) {
@@ -552,7 +552,7 @@ a.active {
 .myInfo p {
     color: #7F7F7F;
     font-size: 14px;
-    line-height: 20px;
+    line-height: 30px;
 }
 
 .myInfo .link {
@@ -675,9 +675,9 @@ a.active {
 @keyframes fadeInUp {
     0% {
         opacity: 0;
-        -webkit-transform: translate3d(0, 100%, 0);
-        -ms-transform: translate3d(0, 100%, 0);
-        transform: translate3d(0, 100%, 0)
+        -webkit-transform: translate3d(0, 150%, 0);
+        -ms-transform: translate3d(0, 150%, 0);
+        transform: translate3d(0, 150%, 0)
     }
     100% {
         opacity: 1;
@@ -723,8 +723,8 @@ a.active {
 .ani-slide .ani4-2,
 .ani-slide .ani5-2 {
     opacity: 1;
-    -webkit-animation: fadeInUp 1s 0.5s both;
-    animation: fadeInUp 1s 0.5s both;
+    -webkit-animation: fadeInUp 1.5s 0.5s both;
+    animation: fadeInUp 1.5s 0.5s both;
 }
 
 .ani-slide .ani5-1-2 {
