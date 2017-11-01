@@ -150,13 +150,13 @@ function message() {
             alert("电话格式不正确")
         } else {
             $.ajax({
-                type: "post",
-                url: "http://show.saigsf.com/php/api_user.php",
+                type: "get",
+                url: "php/api_user.php",
                 data: {
-                    "name": name,
-                    "email": email,
-                    "phone": phone,
-                    "content": content
+                    "name": "'" + name + "'",
+                    "email": "'" + email + "'",
+                    "phone": "'" + phone + "'",
+                    "content": "'" + content + "'"
                 },
                 dataType: 'json',
                 success: function(res) {
@@ -168,7 +168,7 @@ function message() {
                 },
                 error: function(err) {
                     if (err) {
-                        //console.log(err);
+                        console.log(err);
                         alert("提交失败,系统错误");
                     }
                 }
