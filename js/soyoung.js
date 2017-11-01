@@ -150,7 +150,7 @@ function message() {
             alert("电话格式不正确")
         } else {
             $.ajax({
-                type: "get",
+                type: "post",
                 url: "http://show.saigsf.com/php/api_user.php",
                 data: {
                     "name": name,
