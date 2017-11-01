@@ -50,7 +50,7 @@ function toTop() {
             }
             $(window).scrollTop(scroll);
         }, 5);
-        console.log(scroll)
+        // console.log(scroll)
         lock = false;
         setTimeout(function() {
             lock = true;
@@ -181,7 +181,7 @@ function message() {
 
 function edition() {
     $(".top-logo a").click(function() {
-        console.log($("#white").attr('href'))
+        // console.log($("#white").attr('href'))
         if (!$("#white").attr('href')) {
             $("#white").attr('href', 'css/bwhite.css');
 
