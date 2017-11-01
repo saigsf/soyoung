@@ -151,7 +151,7 @@ function message() {
         } else {
             $.ajax({
                 type: "get",
-                url: "php/api_user.php",
+                url: "http://show.saigsf.com/php/api_user.php",
                 data: {
                     "name": name,
                     "email": email,
@@ -223,32 +223,32 @@ function rolling() {
             lock = true;
         }, 1000);
     });
-    $(window).keyup(function(e) {
-        if (!lock) {
-            return;
-        }
-        switch (e.keyCode) {
-            case 38:
-                nowPage--;
-                pageMove($pageBox, nowPage);
-                break;
-            case 40:
-                nowPage++;
-                pageMove($pageBox, nowPage);
-                break;
-            case 123:
+    // $(window).keyup(function(e) {
+    //     if (!lock) {
+    //         return;
+    //     }
+    //     switch (e.keyCode) {
+    //         case 38:
+    //             nowPage--;
+    //             pageMove($pageBox, nowPage);
+    //             break;
+    //         case 40:
+    //             nowPage++;
+    //             pageMove($pageBox, nowPage);
+    //             break;
+    //         case 123:
 
-                break;
+    //             break;
 
-            default:
-                break;
-        }
-        lock = false;
-        /*函数节流，知道两秒钟后，才能执行该函数*/
-        setTimeout(function() {
-            lock = true;
-        }, 1000);
-    })
+    //         default:
+    //             break;
+    //     }
+    //     lock = false;
+    //     /*函数节流，知道两秒钟后，才能执行该函数*/
+    //     setTimeout(function() {
+    //         lock = true;
+    //     }, 1000);
+    // })
 }
 
 function pageMove(obj, page) {
