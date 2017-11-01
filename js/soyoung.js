@@ -151,7 +151,7 @@ function message() {
         } else {
             $.ajax({
                 type: "get",
-                url: "./php/api_user.php",
+                url: "php/api_user.php",
                 data: {
                     "name": name,
                     "email": email,
@@ -263,7 +263,7 @@ function pageMove(obj, page) {
     //方法一使用css样式 
     obj.css('top', -page * 100 + "%")
         .children(".page").each(function(i) {
-            console.log(i, page)
+
             if (i == page) {
                 $(this).addClass("ani-slide")
             }
