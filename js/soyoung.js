@@ -227,7 +227,6 @@ function rolling() {
         if (!lock) {
             return;
         }
-        console.log(e.keyCode)
         switch (e.keyCode) {
             case 38:
                 nowPage--;
@@ -263,7 +262,6 @@ function pageMove(obj, page) {
     //方法一使用css样式 
     obj.css('top', -page * 100 + "%")
         .children(".page").each(function(i) {
-
             if (i == page) {
                 $(this).addClass("ani-slide")
             }
