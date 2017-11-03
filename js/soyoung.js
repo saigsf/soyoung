@@ -1,14 +1,12 @@
 $(window).scrollTop(0);
 $(function() {
-
     // 返回顶部方法调用
-
     // 隐藏栏显示
-
     message();
     edition();
-
     rolling();
+    bullet();
+    overlay();
     navConfirm();
 });
 
@@ -96,35 +94,33 @@ function rolling() {
             lock = true;
         }, 1000);
     });
-    // $(window).keyup(function(e) {
-    //     if (!lock) {
-    //         return;
-    //     }
-    //     switch (e.keyCode) {
-    //         case 38:
-    //             nowPage--;
-    //             pageMove($pageBox, nowPage);
-    //             break;
-    //         case 40:
-    //             nowPage++;
-    //             pageMove($pageBox, nowPage);
-    //             break;
-    //         case 123:
 
-    //             break;
+}
 
-    //         default:
-    //             break;
-    //     }
-    //     lock = false;
-    //     /*函数节流，知道两秒钟后，才能执行该函数*/
-    //     setTimeout(function() {
-    //         lock = true;
-    //     }, 1000);
-    // })
+function bullet() {
+    let $pageBox = $(".pageBox");
+    $(".bullets .bullet").each(function(i) {
+        $(this).click(function() {
+            pageMove($pageBox, i);
+            $(this).addClass("bullet-active").siblings(".bullet-active").removeClass("bullet-active");
+            $(".o-content .o-c-inner").eq(i).addClass("o-c-active").siblings(".o-c-active").removeClass("o-c-active");
+        })
+    })
+}
+
+function overlay() {
+    let $pageBox = $(".pageBox");
+    $(".o-content .o-c-inner").each(function(i) {
+        $(this).click(function() {
+            pageMove($pageBox, i);
+            $(this).addClass("o-c-active").siblings(".o-c-active").removeClass("o-c-active");
+            $(".bullets .bullet").eq(i).addClass("bullet-active").siblings(".bullet-active").removeClass("bullet-active");
+        })
+    })
 }
 
 function pageMove(obj, page) {
+    // 对参数进行判断
     if (page < 0) {
         page = 0;
     }

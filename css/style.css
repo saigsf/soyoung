@@ -368,6 +368,7 @@ header nav ul li a {
     border: 4px solid rgb(226, 226, 228);
     background-color: rgba(37, 143, 184, 1);
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .bullets .bullet:hover {
@@ -399,28 +400,38 @@ header nav ul li a {
     top: 50%;
     right: 2%;
     border-radius: 50%;
-    background: transparent;
+    margin-right: -12px;
+    margin-top: 110px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.video::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 50%;
     background-image: url("../img/timg.jpg");
     background-position: center;
     background-size: cover;
-    margin-right: -12px;
-    margin-top: 110px;
-    /* -webkit-transition: background 0.3s ease-in; */
     -webkit-animation: background 5s linear infinite;
     animation: background 5s linear infinite;
-    cursor: pointer;
 }
 
 @keyframes background {
     0% {
-        -moz-transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
+        -moz-transform: translate3d(-50%, -50%, 0) rotate(0deg);
+        -webkit-transform: translate3d(-50%, -50%, 0) rotate(0deg);
+        transform: translate3d(-50%, -50%, 0) rotate(0deg);
     }
     100% {
-        -moz-transform: rotate(360deg);
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
+        -moz-transform: translate3d(-50%, -50%, 0) rotate(360deg);
+        -webkit-transform: translate3d(-50%, -50%, 0) rotate(360deg);
+        transform: translate3d(-50%, -50%, 0) rotate(360deg);
     }
 }
 
