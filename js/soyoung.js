@@ -59,74 +59,74 @@ function toTop() {
     }, false);
 }
 
-function showSideBar() {
-    var wxBtn = document.querySelector("#sweixin");
-    var closeBtn = document.querySelector(".close-btn");
-    var shareBtn = document.querySelector("#mobile");
-    var wxCode = document.querySelector(".wx-code");
-    var wxlink = document.querySelector(".wx-link");
+// function showSideBar() {
+//     var wxBtn = document.querySelector("#sweixin");
+//     var closeBtn = document.querySelector(".close-btn");
+//     var shareBtn = document.querySelector("#mobile");
+//     var wxCode = document.querySelector(".wx-code");
+//     var wxlink = document.querySelector(".wx-link");
 
-    wxBtn.addEventListener("click", function() {
-        var sideBar = document.querySelector(".side-hiden");
-        sideBar.style.right = 0 + "px";
-        this.parentNode.style.left = 50 + "px";
-    }, false);
+//     wxBtn.addEventListener("click", function() {
+//         var sideBar = document.querySelector(".side-hiden");
+//         sideBar.style.right = 0 + "px";
+//         this.parentNode.style.left = 50 + "px";
+//     }, false);
 
-    closeBtn.addEventListener("click", function() {
-        var sideBar = document.querySelector(".side-hiden");
-        sideBar.style.right = -200 + "px";
-        wxBtn.parentNode.style.left = 0 + "px";
-    }, false);
-    wxlink.addEventListener("click", function() {
-        wxCode.style.display = "block";
-    }, false);
-    shareBtn.addEventListener("click", function() {
-        wxCode.style.display = "block";
-    }, false);
-    wxCode.addEventListener("click", function(event) {
-        event.preventDefault();
-        if (event.target.parentNode.className != "code-pic") {
-            wxCode.style.display = "none";
-        }
+//     closeBtn.addEventListener("click", function() {
+//         var sideBar = document.querySelector(".side-hiden");
+//         sideBar.style.right = -200 + "px";
+//         wxBtn.parentNode.style.left = 0 + "px";
+//     }, false);
+//     wxlink.addEventListener("click", function() {
+//         wxCode.style.display = "block";
+//     }, false);
+//     shareBtn.addEventListener("click", function() {
+//         wxCode.style.display = "block";
+//     }, false);
+//     wxCode.addEventListener("click", function(event) {
+//         event.preventDefault();
+//         if (event.target.parentNode.className != "code-pic") {
+//             wxCode.style.display = "none";
+//         }
 
-    }, false);
+//     }, false);
 
-    // 小屏幕时的sideBar
-    var openAssist = document.querySelector("#openAssist");
-    var oDivs = document.querySelectorAll(".assist div");
+//     // 小屏幕时的sideBar
+//     var openAssist = document.querySelector("#openAssist");
+//     var oDivs = document.querySelectorAll(".assist div");
 
-    var isOpen = false;
-    var lock = true;
-    openAssist.addEventListener("click", function() {
-        if (!lock) {
-            return;
-        }
-        if (isOpen) {
-            this.className = "active hidden-lg";
-            for (var i = 0; i < oDivs.length; i++) {
-                oDivs[i].className = "";
+//     var isOpen = false;
+//     var lock = true;
+//     openAssist.addEventListener("click", function() {
+//         if (!lock) {
+//             return;
+//         }
+//         if (isOpen) {
+//             this.className = "active hidden-lg";
+//             for (var i = 0; i < oDivs.length; i++) {
+//                 oDivs[i].className = "";
 
-            }
+//             }
 
-            isOpen = false;
-        } else {
-            this.className = "";
-            for (var i = 0; i < oDivs.length; i++) {
-                oDivs[i].className = "active";
+//             isOpen = false;
+//         } else {
+//             this.className = "";
+//             for (var i = 0; i < oDivs.length; i++) {
+//                 oDivs[i].className = "active";
 
-            }
+//             }
 
-            isOpen = true;
-        }
-        lock = false;
-        setTimeout(function() {
-            lock = true;
+//             isOpen = true;
+//         }
+//         lock = false;
+//         setTimeout(function() {
+//             lock = true;
 
-        }, 300);
+//         }, 300);
 
-    }, false);
+//     }, false);
 
-}
+// }
 
 function message() {
     var message = document.querySelector("#message");
