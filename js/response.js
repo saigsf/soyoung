@@ -14,8 +14,8 @@
         var containerW = $(".page1 .container").width();
         // page1.style.height = containerW / 2 + "px";
         //
-        var code = document.querySelector(".wx-code");
-        code.style.height = $windowHeight + "px";
+        // var code = document.querySelector(".wx-code");
+        // code.style.height = $windowHeight + "px";
 
     }
 

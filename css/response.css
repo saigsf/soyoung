@@ -21,9 +21,17 @@
 }
 
 .topFixed {
-	z-index: 9999;
+    z-index: 9999;
     position: fixed;
     top: 0px;
+}
+
+.show {
+    display: block;
+}
+
+.hidden {
+    display: none;
 }
 
 

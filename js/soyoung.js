@@ -1,16 +1,15 @@
 $(window).scrollTop(0);
 $(function() {
     // swiperFun()
-
     // 返回顶部方法调用
     // toTop();
     // 隐藏栏显示
-    showSideBar();
+    // showSideBar();
     message();
     edition();
-    topCarousel();
+    // topCarousel();
     rolling();
-
+    navConfirm();
 });
 
 function toTop() {
@@ -211,7 +210,7 @@ function rolling() {
     let nowPage = 0;
     let lock = true;
     $(document).mousewheel(function(e, delta) {
-        toTop()
+        // toTop()
         if (!lock) {
             return;
         }
@@ -273,4 +272,20 @@ function pageMove(obj, page) {
     // }, 1000);
 
     // obj.children(".page")[page].find(".ani")
+}
+
+
+function navConfirm() {
+    $(".header-btn-box .btn").click(function() {
+        if (!$(this).prop('isOpen')) {
+            $(this).removeClass("btn-open").addClass("btn-close")
+            $(this).prop('isOpen', true);
+            $(".overlay").removeClass("ani-slide-o hidden").addClass("ani-slide")
+        } else {
+            $(this).removeClass("btn-close").addClass("btn-open")
+            $(this).prop('isOpen', false);
+            $(".overlay").removeClass("ani-slide").addClass("ani-slide-o  hidden")
+        }
+
+    });
 }
