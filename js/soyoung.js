@@ -8,6 +8,7 @@ $(function() {
     bullet();
     overlay();
     navConfirm();
+    musicCtrl();
 });
 
 function message() {
@@ -158,4 +159,44 @@ function navConfirm() {
         }
 
     });
+}
+
+
+function musicCtrl() {
+    $(".video").mouseover(function() {
+        // console.log($(".music")[0].paused)
+        if ($(".music")[0].paused) {
+            $(".video-stop").removeClass("hidden")
+        } else {
+            $(".video-start").removeClass("hidden")
+
+        }
+
+    });
+    $(".video").mouseout(function() {
+        // console.log($(".music")[0].paused)
+
+        $(".video-stop").addClass("hidden")
+
+        $(".video-start").addClass("hidden")
+
+    });
+
+    $(".video").click(function(e) {
+        // console.log(e.target.className)
+        if (e.target.className == "video-start") {
+            $(".music")[0].pause();
+            $(".video-stop").removeClass("hidden")
+            $(".video-start").addClass("hidden")
+
+
+        } else {
+            $(".music")[0].play();
+            $(".video-start").removeClass("hidden");
+            $(".video-stop").addClass("hidden")
+
+        }
+
+    });
+
 }
