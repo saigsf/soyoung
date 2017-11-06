@@ -435,6 +435,52 @@ header nav ul li a {
     }
 }
 
+.video span {
+    z-index: 55;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: 50%;
+    background-color: rgba(245, 243, 243, 0.76);
+}
+
+.video .video-start::before {
+    content: "";
+    height: 20px;
+    width: 4px;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translateY(-50%);
+    background-color: rgba(20, 20, 20, 0.7)
+}
+
+.video .video-start::after {
+    content: "";
+    height: 20px;
+    width: 4px;
+    position: absolute;
+    top: 50%;
+    right: 35%;
+    transform: translateY(-50%);
+    background-color: rgba(20, 20, 20, 0.7)
+}
+
+.video .video-stop::before {
+    content: "";
+    height: 0px;
+    width: 0px;
+    border: 10px solid rgba(20, 20, 20, 0);
+    border-right-color: rgba(20, 20, 20, 0.7);
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(20%, -50%);
+}
+
 
 /*=====================================*/
 
