@@ -12,7 +12,12 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/response.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link id="white" rel="stylesheet" type="text/css" />
+    <link id="white" rel="stylesheet" type="text/css" href="css/bwhite.css" />
+    <link href="css/default.css" rel="stylesheet" type="text/css" />
+    <!--jQuery-->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/raphael.js" type="text/javascript"></script>
+    <script src="js/init.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -78,10 +83,15 @@
         </div>
         <div class="page page2" id="page2">
             <div class="container">
-                <div class="pageTitle">
+                <!-- <div class="pageTitle">
                     <h2>关于我</h2>
+                </div> -->
+                <div class="img-logo" title="先用这张代替吧"></div>
+                <div class="pageContent">
+                    <p>
+                        您好，我叫高世飞，23岁，坐标西安。 2017年7月毕业于福州大学，读的是物联网工程专业，在校期间自学前端，毕业后，在西安继续学习，做项目，向全栈进发。
+                    </p>
                 </div>
-
             </div>
         </div>
         <div class="page page3" id="page3">
@@ -89,6 +99,91 @@
                 <div class="pageTitle">
                     <h2>我的技能</h2>
                 </div>
+                <div class="pageContent">
+                    <div id="content">
+
+                        <div class="legend">
+
+                            <h1>Legend:</h1>
+
+                            <div class="skills">
+
+                                <ul>
+
+                                    <li class="jq">JavaScript</li>
+
+                                    <li class="css">CSS3</li>
+
+                                    <li class="html">HTML5</li>
+
+                                    <li class="php">PHP</li>
+
+                                    <li class="sql">MySQL</li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <div id="diagram"></div>
+
+                    </div>
+                    <div class="get">
+
+                        <div class="arc">
+
+                            <span class="text">JavaScript</span>
+
+                            <input type="hidden" class="percent" value="95" />
+
+                            <input type="hidden" class="color" value="#97BE0D" />
+
+                        </div>
+
+                        <div class="arc">
+
+                            <span class="text">CSS3</span>
+
+                            <input type="hidden" class="percent" value="90" />
+
+                            <input type="hidden" class="color" value="#D84F5F" />
+
+                        </div>
+
+                        <div class="arc">
+
+                            <span class="text">HTML5</span>
+
+                            <input type="hidden" class="percent" value="80" />
+
+                            <input type="hidden" class="color" value="#88B8E6" />
+
+                        </div>
+
+                        <div class="arc">
+
+                            <span class="text">PHP</span>
+
+                            <input type="hidden" class="percent" value="53" />
+
+                            <input type="hidden" class="color" value="#BEDBE9" />
+
+                        </div>
+
+                        <div class="arc">
+
+                            <span class="text">MySQL</span>
+
+                            <input type="hidden" class="percent" value="45" />
+
+                            <input type="hidden" class="color" value="#EDEBEE" />
+
+                        </div>
+
+                    </div>
+                </div>
+
 
             </div>
         </div>
@@ -133,6 +228,9 @@
                                 </div>
                                 <div class="wx-link">
                                     <a href="javascript:;" id="sweixinlink"><i class="fa fa-weixin"></i></a>
+                                </div>
+                                <div class="github-link">
+                                    <a href="https://github.com/saigsf" id="github"><i class="fa fa-github"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -266,8 +364,7 @@
     <!-- ---------------------------- -->
 
     <!--js依赖-->
-    <!--jQuery-->
-    <script src="js/jquery-3.1.1.min.js"></script>
+
     <script src="js/jquery.mousewheel.js"></script>
     <!-- <script src="js/jquery-1.10.1.min.js"></script> -->
     <!--Zepto-->

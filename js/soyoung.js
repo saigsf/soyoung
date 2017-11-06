@@ -9,6 +9,7 @@ $(function() {
     overlay();
     navConfirm();
     musicCtrl();
+    move3D();
 });
 
 function message() {
@@ -22,8 +23,6 @@ function message() {
         var nameReg = /^[\u4E00-\u9FA5]+$/;
         var phoneReg = /((\d{11})|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$)/;
         var emailReg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-
-
         if (!nameReg.test(name)) {
             alert("姓名只能是汉字")
         } else if (!emailReg.test(email)) {
@@ -74,8 +73,6 @@ function edition() {
     })
 
 }
-
-
 
 function rolling() {
 
@@ -198,5 +195,37 @@ function musicCtrl() {
         }
 
     });
+
+}
+
+function move3D() {
+    var newX = 0,
+        newY = 0;
+
+    $(".block").mouseenter(function(e) {
+
+        var x = e.clientX;
+        var y = e.clientY;
+        $(this).css({
+            "transform": "scale(1.03) "
+        })
+
+        $(".block").mousemove(function(e) {
+
+            newX = e.clientX - x;
+            newY = e.clientY - y;
+            $(this).css({
+                "transition": 'none',
+                "transform": "scale(1.03) translate(" + newX / 30 + "px," + newY / 30 + "px) rotateY(" + newX / 46 + "deg)"
+            })
+        })
+    })
+    $(".block").mouseleave(function(e) {
+        $(this).css({
+            "transition": "all 0.5s ease",
+            "transform": "scale(1) "
+        })
+    })
+
 
 }

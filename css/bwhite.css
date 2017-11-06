@@ -41,7 +41,7 @@ footer {
 
 .side a:hover {
     color: #fff;
-    background-color: #FFCA33;
+    background-color: rgb(109, 108, 108);
 }
 
 .side-hiden .title {
@@ -66,12 +66,14 @@ footer {
 }
 
 .myInfo .link>div {
-    border-color: #EAEAEA;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(109, 108, 108);
 }
 
 .myInfo .link>div:hover {
-    background-color: #FFCA33;
-    border-color: #FFCA33;
+    background-color: rgb(109, 108, 108);
+    border-color: rgb(109, 108, 108);
 }
 
 .myInfo .link>div:hover a {
@@ -90,6 +92,6 @@ footer {
 
 .contact p .inputtxt.submit:hover {
     color: #fff;
-    border-color: #FFCA33;
-    background-color: #FFCA33;
+    border-color: rgb(109, 108, 108);
+    background-color: rgb(109, 108, 108);
 }

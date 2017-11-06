@@ -251,6 +251,8 @@ header nav ul li a {
 }
 
 .h-logo:hover {
+    box-shadow: 0 0 10px rgb(189, 187, 187);
+    -webkit-box-shadow: 0 0 10px rgb(189, 187, 187);
     -webkit-animation: shakeUpDown 1s ease-in-out 0s infinite;
     animation: shakeUpDown 1s ease-in-out 0s infinite;
 }
@@ -322,6 +324,14 @@ header nav ul li a {
     border-bottom: 1px solid #666;
     box-sizing: border-box;
     transition: all 0.6s linear 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-size: cover;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    align-items: center;
 }
 
 .page:nth-child(2n+1) {
@@ -474,11 +484,11 @@ header nav ul li a {
     height: 0px;
     width: 0px;
     border: 10px solid rgba(20, 20, 20, 0);
-    border-right-color: rgba(20, 20, 20, 0.7);
+    border-left-color: rgba(20, 20, 20, 0.7);
     position: absolute;
     top: 50%;
     right: 50%;
-    transform: translate(20%, -50%);
+    transform: translate(80%, -50%);
 }
 
 
@@ -767,6 +777,7 @@ a.active {
 .pageTitle h2 {
     color: #fff;
     font-size: 30px;
+    letter-spacing: 2px;
     font-weight: normal;
 }
 
@@ -783,15 +794,8 @@ a.active {
 /* =============page1============== */
 
 .page1 {
-    height: 100%;
-    width: 100%;
     /* padding: 200px 400px; */
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     background-image: url("../img/2011051907235015.jpg");
-    background-size: cover;
 }
 
 .page1:hover .block {
@@ -809,15 +813,13 @@ a.active {
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.5);
     z-index: 2;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
-    box-shadow: none
+    box-shadow: none;
+    transition: all 0.5s ease;
 }
 
 .page1 .block:hover {
     box-shadow: 0 0 70px #111;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .page1 .block .text {
@@ -847,25 +849,77 @@ a.active {
 
 /* ============page2============= */
 
-.page2 {}
+.page2 {
+    background-image: url("../img/bg2.jpg");
+}
+
+.page2 .pageTitle h2 {
+    color: #333;
+}
 
 .page2 .pageTitle::after {
     content: "ABOUT ME"
 }
 
+.page2 .img-logo {
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url("../img/about-logo-1.jpg") no-repeat center;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.page2 .img-logo:hover {
+    box-shadow: 0 0 10px rgb(11, 130, 241);
+    -webkit-box-shadow: 0 0 10px rgb(11, 130, 241);
+}
+
+.page2 .pageContent {
+    margin: auto;
+    height: 300px;
+    width: 600px;
+    padding: 0 20px;
+    margin-top: 10px;
+    /* text-align: center; */
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(245, 243, 243, 0.76);
+    border-radius: 9px;
+}
+
 
 /* =============page3============= */
 
-.page3 {}
+.page3 {
+    background-image: url("../img/bg3.jpg")
+}
 
 .page3 .pageTitle::after {
     content: "I CAN"
 }
 
+.page3 .pageContent {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 
 /* =============page4============= */
 
-.page4 {}
+.page4 {
+    background-image: url("../img/bg4.jpg");
+}
 
 .page4 .pageTitle::after {
     content: "I DID"
@@ -875,6 +929,7 @@ a.active {
 /*============pageLast=============*/
 
 .pageLast {
+    background-image: url("../img/bg5.jpg");
     padding-top: 100px;
 }
 
