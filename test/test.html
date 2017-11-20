@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" class="name" value="">
+    <button type="button">提交</button>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/verfy.js"></script>
+    <script>
+        var name = $(".name").val()
+        var reg = /^[A-Za-z]+$/;
+        var options = [{
+            el: $(".name"),
+            name: "name",
+            series: [{
+                type: "RegExp",
+                itemStyle: /^\w+$/,
+                returnData: "内容不符合要求"
+            }, {
+                type: "maxLength",
+                itemStyle: 20,
+                returnData: "长度不能大于20"
+            }, {
+                type: "minLength",
+                itemStyle: 3,
+                returnData: "长度不能小于3"
+            }, {
+                type: "Required",
+                itemStyle: true,
+                returnData: "不能为空"
+            }]
+        }, {
+            name: "email",
+            series: [{
+                type: "RegExp",
+                itemStyle: /^\w+$/,
+                returnData: "内容不符合要求"
+            }, {
+                type: "maxLength",
+                itemStyle: 20,
+                returnData: "长度不能大于20"
+            }, {
+                type: "minLength",
+                itemStyle: 3,
+                returnData: "长度不能小于3"
+            }, {
+                type: "Required",
+                itemStyle: true,
+                returnData: "不能为空"
+            }]
+        }, {
+            name: "password",
+            series: [{
+                type: "RegExp",
+                itemStyle: /^\w+$/,
+                returnData: "内容不符合要求"
+            }, {
+                type: "maxLength",
+                itemStyle: 20,
+                returnData: "长度不能大于20"
+            }, {
+                type: "minLength",
+                itemStyle: 3,
+                returnData: "长度不能小于3"
+            }, {
+                type: "Required",
+                itemStyle: true,
+                returnData: "不能为空"
+            }]
+        }, {
+            name: "rePassword",
+            series: [{
+                type: "password",
+                itemStyle: "password",
+                returnData: "密码不一致"
+            }]
+        }];
+
+        var opt = {
+            name: "rePassword",
+            series: [{
+                type: "password",
+                itemStyle: "password",
+                returnData: "密码不一致"
+            }]
+        }
+
+        $("button").click(function() {
+            $(this).verifyAll(options, function(res) {
+                console.log(res)
+            }).verifyAll(opt, function(res) {
+                console.log(res)
+            })
+        })
+    </script>
+</body>
+
+</html>
