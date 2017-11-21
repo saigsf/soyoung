@@ -5,10 +5,10 @@ $output = array();
 $mdpass='';
 //获取传递参数
 
-$name= @$_REQUEST['name'] ? $_REQUEST['name'] : '';
-$email = @$_REQUEST['email'] ? $_REQUEST['email'] : '';
-$phone = @$_REQUEST['phone'] ? $_REQUEST['phone'] : '';
-$content = @$_REQUEST['content'] ? $_REQUEST['content'] : '';
+$name= @$_POST['name'] ? $_POST['name'] : '';
+$email = @$_POST['email'] ? $_POST['email'] : '';
+$phone = @$_POST['phone'] ? $_POST['phone'] : '';
+$content = @$_POST['content'] ? $_POST['content'] : '';
 //判断是否为空
 if (empty($name)) {
 	$output = array('data' => array(), 'message' => '姓名不能为空!', 'code' => 10001);
@@ -34,6 +34,15 @@ if (empty($name)) {
 require('connect.php');
 // $conn = mysql_connect("qdm114548101.my3w.com", "qdm114548101", "saigsf2270029397");
 // mysql_select_db("qdm114548101_db", $conn);
+// //设置字符集
+// mysql_query("SET NAMES UTF8 ");
+
+// $mysqlhost="localhost";
+// $mysqlname="root";
+// $password="root";
+// $dbname="test";
+// $conn = mysql_connect($mysqlhost, $mysqlname, $password);
+// mysql_select_db($dbname, $conn);
 // //设置字符集
 // mysql_query("SET NAMES UTF8 ");
 

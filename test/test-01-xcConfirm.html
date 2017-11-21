@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 移动端字体 尺寸 规范 -->
+    <script>
+        ! function(a, b) {
+            function c() {
+                var b = f.getBoundingClientRect().width;
+                b / i > 540 && (b = 540 * i);
+                var c = b / 10;
+                f.style.fontSize = c + "px", k.rem = a.rem = c
+            }
+            var d, e = a.document,
+                f = e.documentElement,
+                g = e.querySelector('meta[name="viewport"]'),
+                h = e.querySelector('meta[name="flexible"]'),
+                i = 0,
+                j = 0,
+                k = b.flexible || (b.flexible = {});
+            if (g) {
+                console.warn("将根据已有的meta标签来设置缩放比例");
+                var l = g.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
+                l && (j = parseFloat(l[1]), i = parseInt(1 / j))
+            } else if (h) {
+                var m = h.getAttribute("content");
+                if (m) {
+                    var n = m.match(/initial\-dpr=([\d\.]+)/),
+                        o = m.match(/maximum\-dpr=([\d\.]+)/);
+                    n && (i = parseFloat(n[1]), j = parseFloat((1 / i).toFixed(2))), o && (i = parseFloat(o[1]), j = parseFloat((1 / i).toFixed(2)))
+                }
+            }
+            if (!i && !j) {
+                var p = (a.navigator.appVersion.match(/android/gi), a.navigator.appVersion.match(/iphone/gi)),
+                    q = a.devicePixelRatio;
+                i = p ? q >= 3 && (!i || i >= 3) ? 3 : q >= 2 && (!i || i >= 2) ? 2 : 1 : 1, j = 1 / i
+            }
+            if (f.setAttribute("data-dpr", i), !g)
+                if (g = e.createElement("meta"), g.setAttribute("name", "viewport"), g.setAttribute("content", "initial-scale=" + j + ", maximum-scale=" + j + ", minimum-scale=" + j + ", user-scalable=no"), f.firstElementChild) f.firstElementChild.appendChild(g);
+                else {
+                    var r = e.createElement("div");
+                    r.appendChild(g), e.write(r.innerHTML)
+                }
+            a.addEventListener("resize", function() {
+                clearTimeout(d), d = setTimeout(c, 300)
+            }, !1), a.addEventListener("pageshow", function(a) {
+                a.persisted && (clearTimeout(d), d = setTimeout(c, 300))
+            }, !1), "complete" === e.readyState ? e.body.style.fontSize = 12 * i + "px" : e.addEventListener("DOMContentLoaded", function() {
+                e.body.style.fontSize = 12 * i + "px"
+            }, !1), c(), k.dpr = a.dpr = i, k.refreshRem = c, k.rem2px = function(a) {
+                var b = parseFloat(a) * this.rem;
+                return "string" == typeof a && a.match(/rem$/) && (b += "px"), b
+            }, k.px2rem = function(a) {
+                var b = parseFloat(a) / this.rem;
+                return "string" == typeof a && a.match(/px$/) && (b += "rem"), b
+            }
+        }(window, window.lib || (window.lib = {}));
+    </script>
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/xcConfirm.css" />
+    <style type="text/css">
+        .sgBtn {
+            width: 135px;
+            height: 35px;
+            line-height: 35px;
+            margin-left: 10px;
+            margin-top: 10px;
+            text-align: center;
+            background-color: #0095D9;
+            color: #FFFFFF;
+            float: left;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 内容 -->
+    <div class="" style="height: 768px;">
+        <div class="sgBtn" id="btn1">弹窗1(信息)</div>
+        <div class="sgBtn" id="btn2">弹窗2(提示)</div>
+        <div class="sgBtn" id="btn3">弹窗3(警告)</div>
+        <div class="sgBtn" id="btn4">弹窗4(错误)</div>
+        <div class="sgBtn" id="btn5">弹窗5(成功)</div>
+        <div class="sgBtn" id="btn6">弹窗6(输入框)</div>
+        <div class="sgBtn" id="btn7">弹窗7(自定义)</div>
+        <div class="sgBtn" id="btn8">弹窗8(默认)</div>
+    </div>
+    <!-- jQuery 库 -->
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <!-- 其它 js插件 -->
+    <script src="../js/xcConfirm.js" type="text/javascript" charset="utf-8"></script>
+
+    <script type="text/javascript">
+        $(function() {
+
+            $("#btn1").click(function() {
+                var txt = "提示文字，提示文字，提示文字，提示文字，提示文字，提示文字";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.info);
+            });
+
+            $("#btn2").click(function() {
+                var txt = "提示文字，提示文字，提示文字，提示文字，提示文字，提示文字";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.confirm);
+
+            });
+
+            $("#btn3").click(function() {
+                var txt = "提示文字，提示文字，提示文字，提示文字，提示文字，提示文字";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.warning);
+            });
+
+            $("#btn4").click(function() {
+                var txt = "提示文字，提示文字，提示文字，提示文字，提示文字，提示文字";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.error);
+            });
+
+            $("#btn5").click(function() {
+                var txt = "提示文字，提示文字，提示文字，提示文字，提示文字，提示文字";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.success);
+            });
+
+            $("#btn6").click(function() {
+                var txt = "请输入";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.input, {
+                    onOk: function(v) {
+                        console.log(v);
+                    }
+                });
+            });
+
+            $("#btn7").click(function() {
+                var txt = "自定义呀";
+                var option = {
+                    title: "自定义",
+                    btn: parseInt("0011", 2),
+                    onOk: function() {
+                        console.log("确认啦");
+                    }
+                }
+                window.wxc.xcConfirm(txt, "custom", option);
+            });
+
+            $("#btn8").click(function() {
+                var txt = "默认";
+                window.wxc.xcConfirm(txt);
+            });
+        });
+    </script>
+</body>
+
+</html>

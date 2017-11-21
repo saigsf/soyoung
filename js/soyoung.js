@@ -30,14 +30,15 @@ function message() {
         } else if (!phoneReg.test(phone)) {
             alert("电话格式不正确")
         } else {
+            console.log(1);
             $.ajax({
-                type: "get",
-                url: "php/api_user.php",
+                type: "POST",
+                url: "http://localhost/myproject/soyoung/php/api_user.php",
                 data: {
-                    "name": "'" + name + "'",
-                    "email": "'" + email + "'",
-                    "phone": "'" + phone + "'",
-                    "content": "'" + content + "'"
+                    "name": name,
+                    "email": email,
+                    "phone": phone,
+                    "content": content
                 },
                 dataType: 'json',
                 success: function(res) {
