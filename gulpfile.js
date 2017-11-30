@@ -1,9 +1,9 @@
 /*
- * @Author: ntnyq<qq: 1210485244 email: lssham@qq.com>
- * @Date:   2017-10-20
- * @Last Modified by:   M S I
- * @Last Modified time: 2017-10-20
- */
+* @Author: ntnyq<qq: 1210485244 email: lssham@qq.com>
+* @Date:   2017-10-20
+* @Last Modified by:   M S I
+* @Last Modified time: 2017-10-20
+*/
 
 /* Modules import */
 
@@ -44,82 +44,82 @@ var sequence = require('gulp-sequence')
 /* Gulp tasks */
 
 // Delete directory
-gulp.task('clean', function() {
-    gulp.src('dist')
-        .pipe(clean())
+gulp.task('clean', function () {
+  gulp.src('dist')
+  .pipe(clean())
 })
 
 // Transpile less and add prefix
-gulp.task('less', function() {
+gulp.task('less', function () {
 
-    gulp.src('less/*.less')
+  gulp.src('src/less/*.less')
 
-    .pipe(less())
+  .pipe(less())
 
-    .pipe(autoprefixer({
-        browsers: ['last 5 version', 'Android >= 4.0'],
-        cascade: true, // Beatify css rules with prefix, Default value: true
-        remove: true // Remove rules not neccessary, Default value: true
-    }))
+  .pipe(autoprefixer({
+      browsers: ['last 5 version', 'Android >= 4.0'],
+      cascade: true, // Beatify css rules with prefix, Default value: true
+      remove: true // Remove rules not neccessary, Default value: true
+  }))
 
-    .pipe(gulp.dest('css'))
+  .pipe(gulp.dest('src/css'))
 })
 
 // Minify css file, transform small png to base64, add min suffix
-gulp.task('cssmin', function() {
+gulp.task('cssmin', function () {
 
-    gulp.src('css/*.css')
+  gulp.src('src/css/*.css')
 
-    .pipe(cleanCss())
+  .pipe(cleanCss())
 
-    .pipe(base64({
-        extensions: ['png'],
-        maxImageSize: 8 * 1024, // bytes
-    }))
+  .pipe(base64({
+    extensions: ['png'],
+    maxImageSize: 8 * 1024, // bytes
+  }))
 
-    .pipe(rename({
-        suffix: '.min'
-    }))
+  .pipe(rename({
+    suffix: '.min'
+  }))
 
-    .pipe(gulp.dest('dist/css'))
+  .pipe(gulp.dest('dist/css'))
 })
 
 // Minify js file, transfrom ES6 => ES5, add min suffix
-gulp.task('jsmin', function() {
+gulp.task('jsmin', function () {
 
-    gulp.src('js/*.js')
+  gulp.src('src/js/*.js')
 
-    .pipe(babel({
-        presets: ['env']
-    }))
+  .pipe(babel({
+    presets: ['env']
+  }))
 
-    .pipe(uglify().on('error', function(e) {
-        console.log(e)
-    }))
+  .pipe(uglify().on('error', function (e) {
+    console.log(e)
+  }))
 
-    .pipe(rename({
-        suffix: '.min'
-    }))
+  .pipe(rename({
+    suffix: '.min'
+  }))
 
-    .pipe(gulp.dest('dist/js'))
+  .pipe(gulp.dest('dist/js'))
 })
 
 // Watch files in baseDir, and reload browser
-gulp.task('server', function() {
+gulp.task('server', function () {
 
-    var files = ['**/*.html', 'css/*.css', 'js/*.js']
+  var files = ['**/*.html', 'src/css/*.css', 'src/js/*.js']
 
-    browserSync.init(files, { // Init server
-        server: {
-            baseDir: './'
-        }
-    })
+  browserSync.init(files, { // Init server
+    server: {
+      baseDir: './'
+    }
+  })
 
-    gulp.watch('less/*.less', ['less']) // Watch CSS file and run task
+  gulp.watch('src/less/*.less', ['less']) // Watch CSS file and run task
 
-    gulp.watch('**', function() {
-        browserSync.reload()
-    })
+  gulp.watch('src/**', function () {
+    browserSync.reload()
+  })
 })
 
 // Build project, run tasts in sequence
