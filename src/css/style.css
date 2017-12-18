@@ -283,7 +283,7 @@ header nav ul li a {
     transform: translate3d(0, -50%, 0);
     width: 60px;
     height: 60px;
-    background-image: url("../img/h-logo.jpg");
+    background-image: url("../img/other/h-logo.jpg");
     background-size: cover;
     background-position: center;
     border-radius: 50%;
@@ -425,7 +425,7 @@ header nav ul li a {
     left: 50%;
     transform: translate3d(-50%, -50%, 0);
     border-radius: 50%;
-    background-image: url("../img/timg.jpg");
+    background-image: url("../img/other/timg.jpg");
     background-position: center;
     background-size: cover;
     -webkit-animation: background 5s linear infinite;
@@ -795,7 +795,7 @@ a.active {
 
 .page1 {
     /* padding: 200px 400px; */
-    background-image: url("../img/2011051907235015.jpg");
+    background-image: url("../img/bg_group/Fan-1366x768-001.jpg");
 }
 
 .page1:hover .block {
@@ -850,7 +850,7 @@ a.active {
 /* ============page2============= */
 
 .page2 {
-    background-image: url("../img/bg2.jpg");
+    background-image: url("../img/bg_group/Fan-1440x900-014.jpg");
 }
 
 .page2 .pageTitle h2 {
@@ -870,7 +870,7 @@ a.active {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: url("../img/about-logo-1.jpg") no-repeat center;
+    background: url("../img/other/about-logo-1.jpg") no-repeat center;
     background-size: cover;
     cursor: pointer;
 }
@@ -878,6 +878,7 @@ a.active {
 .page2 .img-logo:hover {
     box-shadow: 0 0 10px rgb(11, 130, 241);
     -webkit-box-shadow: 0 0 10px rgb(11, 130, 241);
+    animation: beat 1s ease 0s 
 }
 
 .page2 .pageContent {
@@ -899,7 +900,7 @@ a.active {
 /* =============page3============= */
 
 .page3 {
-    background-image: url("../img/bg3.jpg")
+    background-image: url("../img/bg_group/Fan-1366x768-006.jpg")
 }
 
 .page3 .pageTitle::after {
@@ -918,7 +919,7 @@ a.active {
 /* =============page4============= */
 
 .page4 {
-    background-image: url("../img/bg4.jpg");
+    background-image: url("../img/bg_group/Fan-1366x768-007.jpg");
 }
 
 .page4 .pageTitle::after {
@@ -929,7 +930,7 @@ a.active {
 /*============pageLast=============*/
 
 .pageLast {
-    background-image: url("../img/bg5.jpg");
+    background-image: url("../img/bg_group/Fan-1366x768-005.jpg");
     padding-top: 100px;
 }
 
@@ -1021,6 +1022,42 @@ a.active {
 
 
 /* =========过渡动画=========== */
+@keyframes beat {
+  from,
+  to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  25% {
+    -webkit-transform: scale(0.9, 1.1);
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    -webkit-transform: scale(1.1, 0.9);
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    -webkit-transform: scale(0.95, 1.05);
+    transform: scale(0.95, 1.05);
+  }
+  from,
+  to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  25% {
+    -webkit-transform: scale(0.9, 1.1);
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    -webkit-transform: scale(1.1, 0.9);
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    -webkit-transform: scale(0.95, 1.05);
+    transform: scale(0.95, 1.05);
+  }
+}
 
 @-webkit-keyframes fadeInDown {
     0% {
