@@ -5,19 +5,29 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <!-- <script src=".src/js/main/response.js"></script> -->
+    <script>
+        function debounce(c, a) { var d = null; return function () { var g = this, e = arguments; clearTimeout(d); d = setTimeout(function () { c.apply(g, e) }, a) } } var f = 100; var b = 1366; !function (e, d) { var a = d.documentElement; var c = a.clientWidth; a.style.fontSize = c / b * f + "px"; e.onresize = debounce(function () { location.href = location.href }, 300) }(window, document);
+    </script>
     <title>it`s my project</title>
-    <link rel="stylesheet" href="./src/css/bootstrap.css">
-    <link rel="stylesheet" href="./src/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="./src/css/reset.css" />
+    <!-- bootstrap -->
+    <!-- <link rel="stylesheet" href="./src/css/common/bootstrap.css"> -->
+    <!-- 字体 -->
+    <link rel="stylesheet" href="./src/css/common/font-awesome.min.css">
+    <!-- 初始化格式 -->
+    <link rel="stylesheet" type="text/css" href="./src/css/common/reset.min.css" />
+    <!-- 自定义响应式 -->
     <link rel="stylesheet" type="text/css" href="./src/css/response.css" />
-    <link rel="stylesheet" type="text/css" href="./src/css/style.css" />
-    <link id="white" rel="stylesheet" type="text/css" href="./src/css/bwhite.css" />
-    <link href="./src/css/default.css" rel="stylesheet" type="text/css" />
-    <!--jQuery-->
-    <script src="./src/js/jquery-3.1.1.min.js"></script>
-    <script src="./src/js/raphael.js" type="text/javascript"></script>
-    <script src="./src/js/init.js" type="text/javascript"></script>
+    <!-- 页面样式 -->
+    <!-- <link rel="stylesheet" type="text/css" href="./src/css/style.css" /> -->
+    <link rel="stylesheet" type="text/css" href="./src/css/style-new.css" />
+
+    <!-- <link id="white" rel="stylesheet" type="text/css" href="./src/css/bwhite.css" /> -->
+    <!-- page2 图表 -->
+    <!-- <link href="./src/css/default.css" rel="stylesheet" type="text/css" /> -->
+    
+    <!-- <script src="./src/js/raphael.js" type="text/javascript"></script> -->
+    <!-- <script src="./src/js/init.js" type="text/javascript"></script> -->
 </head>
 
 <body>
@@ -29,7 +39,7 @@
     </div>
     <!-- 导航显示隐藏按钮 -->
     <div class="header-btn-box">
-        <div class="btn btn-open" title="导航" isOpen='false'>
+        <div class="btn btn-open" title="导航" >
             <span class="top"></span>
             <span class="middle"></span>
             <span class="btm"></span>
@@ -52,116 +62,31 @@
             </div>
         </div>
         <div class="page page2" id="page2">
-            <div class="container">
-                <!-- <div class="pageTitle">
-                    <h2>关于我</h2>
-                </div> -->
-                <div class="img-logo" title="先用这张代替吧"></div>
-                <div class="pageContent">
-                    <p>
-                        您好，我叫高世飞，23岁，坐标西安。 2017年7月毕业于福州大学，读的是物联网工程专业，在校期间自学前端，毕业后，在西安继续学习，做项目，向全栈进发。
-                    </p>
-                </div>
+            <div class="img-logo" title="先用这张代替吧"></div>
+            <div class="pageContent">
+                <p>
+                    您好，我叫高世飞，23岁，坐标西安。 2017年7月毕业于福州大学，读的是物联网工程专业，在校期间自学前端，毕业后，在西安继续学习，做项目，向全栈进发。
+                </p>
             </div>
         </div>
         <div class="page page3" id="page3">
             <div class="container">
-                <div class="pageTitle">
-                    <h2>我的技能</h2>
-                </div>
-                <div class="pageContent">
-                    <div id="content">
-
-                        <div class="legend">
-
-                            <h1>Legend:</h1>
-
-                            <div class="skills">
-
-                                <ul>
-
-                                    <li class="jq">JavaScript</li>
-
-                                    <li class="css">CSS3</li>
-
-                                    <li class="html">HTML5</li>
-
-                                    <li class="php">PHP</li>
-
-                                    <li class="sql">MySQL</li>
-
-                                </ul>
-
-                            </div>
-
-                        </div>
-
-                        <div id="diagram"></div>
-
+                
+                <div class="row">
+                    <div class="mecol-sm-4">
+                        <div class="echart-one" id="echart-one"></div>
                     </div>
-                    <div class="get">
-
-                        <div class="arc">
-
-                            <span class="text">JavaScript</span>
-
-                            <input type="hidden" class="percent" value="95" />
-
-                            <input type="hidden" class="color" value="#97BE0D" />
-
-                        </div>
-
-                        <div class="arc">
-
-                            <span class="text">CSS3</span>
-
-                            <input type="hidden" class="percent" value="90" />
-
-                            <input type="hidden" class="color" value="#D84F5F" />
-
-                        </div>
-
-                        <div class="arc">
-
-                            <span class="text">HTML5</span>
-
-                            <input type="hidden" class="percent" value="80" />
-
-                            <input type="hidden" class="color" value="#88B8E6" />
-
-                        </div>
-
-                        <div class="arc">
-
-                            <span class="text">PHP</span>
-
-                            <input type="hidden" class="percent" value="53" />
-
-                            <input type="hidden" class="color" value="#BEDBE9" />
-
-                        </div>
-
-                        <div class="arc">
-
-                            <span class="text">MySQL</span>
-
-                            <input type="hidden" class="percent" value="45" />
-
-                            <input type="hidden" class="color" value="#EDEBEE" />
-
-                        </div>
-
+                    <div class="mecol-sm-6">
+                        <div class="echart-two" id="echart-two"></div>
                     </div>
                 </div>
-
-
             </div>
         </div>
         <div class="page page4" id="page4">
             <div class="container-fluid">
-                <div class="pageTitle">
+                <!-- <div class="pageTitle">
                     <h2>我做过的</h2>
-                </div>
+                </div> -->
                 <div class="items">
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 ">ddd</div>
@@ -172,15 +97,15 @@
         </div>
         <div class="page pageLast" id="pageLast">
             <div class="container">
-                <div class="row">
+                <!-- <div class="row">
                     <div class="mecol-lg-10 mecol-md-10 mecol-sm-10 mecol-xs-10">
                         <div class="pageTitle ani ani2-2">
                             <h2>联系我</h2>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="row">
-                    <div class="mecol-lg-5 mecol-md-5 mecol-sm-10 mecol-xs-10">
+                    <div class="mecol-sm-5">
                         <div class="myInfo ani ani2-2">
                             <h3>我的联系方式</h3>
                             <p>地址：陕西省西安市碑林区</p>
@@ -205,7 +130,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mecol-lg-5 mecol-md-5 mecol-sm-10 mecol-xs-10">
+                    <div class=" mecol-sm-5">
                         <div class="contact ani ani2-2">
                             <form name="message" id="message">
                                 <p>
@@ -243,7 +168,7 @@
     </div>
     <!-- 音乐控制按钮 -->
     <div class="video">
-        <audio class="music" src="./src/m/1.mp3" autoplay loop></audio>
+        <audio class="music" src="./src/m/1.mp3"  loop></audio>
         <span class="video-start hidden"></span>
         <span class="video-stop hidden"></span>
     </div>
@@ -254,92 +179,24 @@
             <div class="o-c-inner o-c-active">首页</div>
             <div class="o-c-inner">关于我</div>
             <div class="o-c-inner">技能掌握</div>
-            <div class="o-c-inner">我的经历</div>
+            <!-- <div class="o-c-inner">我的经历</div> -->
             <div class="o-c-inner">我的作品</div>
             <div class="o-c-inner">联系我</div>
         </div>
         <div class="o-logo ani ani-r-i-3 ani-r-o-2 ">
             <h2>高世飞</h2>
-            <p>陕ICP备17019594号-1</p>
         </div>
+        <p class="ani ani-r-i-3 ani-r-o-2 ">陕ICP备17019594号-1</p>
+        
     </div>
-
-    <!----------------footer-------------------->
-    <!-- <footer>
-        <p>陕ICP备17019594号-1</p>
-    </footer> -->
-    <!-- -------------------------------------- -->
-    <!-- ------------sidebar-------------- -->
-    <!-- <div class="side hidden-md hidden-sm hidden-xs">
-        <div class="wx-icon">
-            <a href="javascript:;" id="sweixin"><i class="fa fa-comments-o"></i></a>
-        </div>
-        <div class="wb-icon">
-            <a href="javascript:;" id="sweibo"><i class="fa fa-weibo"></i></a>
-        </div>
-        <div class="mobile-icon">
-            <a href="javascript:;" id="mobile"><i class="fa fa-mobile-phone"></i></a>
-        </div>
-        <div class="toTop">
-            <a href="javascript:;" id="toTop"><i class="fa fa-angle-up"></i></a>
-        </div>
-
-    </div>
-    <div class="side-hiden ">
-        <div class="title">
-            <p>在线咨询</p>
-            <div class="close-btn">
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        <p class="qq">
-            <i class="fa fa-qq"></i>2270029397
-        </p>
-        <div class="phone">
-            <p><i class="fa fa-phone"></i>联系方式</p>
-            <p>18792889956</p>
-        </div>
-    </div>
-    <div class="wx-code">
-        <div class="code-pic">
-            <img src="img/weixin.png" alt="微信">
-            <p>扫描二维码分享到微信</p>
-        </div>
-
-    </div>
-
-    <div class="assist hidden-lg">
-        <div class="">
-            <a href="javascript:;">
-                <i class="fa fa-angle-up"></i>
-            </a>
-
-        </div>
-        <div class="">
-            <a href="javascript:;">
-                <i class="fa fa-phone"></i>
-            </a>
-
-        </div>
-        <div class="">
-            <a href="javascript:;">
-                <i class="fa fa-qq"></i>
-            </a>
-
-        </div>
-    </div>
-    <a href="javascript:;" id="openAssist" class="active hidden-lg">
-        <i class="fa fa-remove"></i>
-    </a> -->
-    <!-- ---------------------------- -->
-
     <!--js依赖-->
-
-    <script src="./src/js/jquery.mousewheel.js"></script>
+    <!--jQuery-->
+    <script src="./src/js/common/jquery.js"></script>
+    <!-- 鼠标滚轮事件 -->
+    <script src="./src/js/plug_in_unit/jquery.mousewheel.js"></script>
     <!-- <script src="js/jquery-1.10.1.min.js"></script> -->
     <!--Zepto-->
-    <script src="./src/js/zepto.min.js"></script>
+    <!-- <script src="./src/js/zepto.min.js"></script> -->
     <!-- bootstrap -->
     <!-- <script src="js/bootstrap.js"></script> -->
     <!-- swiper -->
@@ -350,9 +207,12 @@
     <!--<script src="js/particles.min.js"></script>
     <script src="js/app.js"></script>-->
     <!-- <script src="js/ThePlugInMapCarousel.js"></script> -->
+
+    <!-- echart -->
+    <script src="./src/js/common/echarts.min.js"></script>
     <!--my js文件-->
-    <script src="./src/js/response.js"></script>
-    <script src="./src/js/soyoung.js"></script>
+    <script src="./src/js/main/response.js"></script>
+    <script src="./src/js/main/soyoung.js"></script>
 
 </body>
 

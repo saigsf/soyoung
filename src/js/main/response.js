@@ -1,0 +1,3 @@
+// (function() {
+//     function debounce(c, a) { var d = null; return function () { var g = this, e = arguments; clearTimeout(d); d = setTimeout(function () { c.apply(g, e) }, a) } } var f = 100; var b = 1366; !function (e, d) { var a = d.documentElement; var c = a.clientWidth; a.style.fontSize = c / b * f + "px"; e.onresize = debounce(function () { location.href = location.href }, 300) }(window, document);
+// })();

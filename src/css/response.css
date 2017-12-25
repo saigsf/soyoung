@@ -109,7 +109,7 @@
 
 /*=======================响应式十栅格系统=============================*/
 
-@media only screen and (min-width:1200px) {
+@media(min-width:1200px) {
     .hidden-lg {
         display: none;
     }
@@ -160,7 +160,7 @@
     }
 }
 
-@media (min-width:992px) and (max-width: 1199px) {
+@media (min-width:992px) {
     .hidden-md {
         display: none;
     }
@@ -211,7 +211,7 @@
     }
 }
 
-@media (min-width:768px) and (max-width: 991px) {
+@media (min-width:768px) {
     .hidden-sm {
         display: none;
     }

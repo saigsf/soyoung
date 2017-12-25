@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .black-overlay {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .3);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .mydialog {
+            background: #fff;
+            -webkit-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
+            box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            width: 300px;
+            height: 180px;
+            border: 1px solid #dcdcdc;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+        }
+
+        .close {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            text-align: center;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 11;
+        }
+
+        .mydialog-header {
+            line-height: 40px;
+            font-size: 20px;
+            padding: 6px 12px;
+            display: table;
+            table-layout: fixed;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-sizing: border-box;
+            border-bottom: 1px solid #dcdcdc;
+        }
+
+        .mydialog-cont {
+            padding: 50px 0 50px;
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mydialog-cont .cont {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+            width: 100%;
+            height: 100%;
+        }
+
+        .mydialog-footer {
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-top: 1px solid #dcdcdc;
+        }
+
+        .mydialog-footer .btn {
+            display: table-cell;
+            width: 50%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .mydialog-footer .btn:last-child {
+            display: table-cell;
+            width: 50%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+            border-left: 1px solid #dcdcdc;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button">点击测试</button>
+    <div class="black-overlay" id="popup_errer_box">
+        <div class="mydialog">
+            <span class="close" id="close">×</span>
+            <div class="mydialog-header">提示信息</div>
+            <div class="mydialog-cont">
+                <div class="cont" id="popup_msg_content">
+                    服务错误
+                </div>
+            </div>
+            <div class="mydialog-footer">
+                <span class="btn btn-cancel" id="popup_msg_cancel">取消</span>
+                <span class="btn btn-ok" id="popup_msg_ok">确定</span>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+        (function () {
+            $(function () {
+                var toggleWindow = function(showBox, hideBox){
+                    // console.log(arguments.length);
+                    if(arguments.length === 1){
+                        $(arguments[0]).hide();
+                    }else if(arguments.length === 2){
+                        $(arguments[0]).show();
+                        $(arguments[1]).hide();
+                    }
+                }
+                var showMsgBox = function (options) {
+                    var def = {
+                        content: '提示信息',
+                        action: {
+                            ok: function () { 
+                                toggleWindow('#popup_errer_box')
+                            },
+                            cancel: function () { 
+                                toggleWindow('#popup_errer_box')
+                            },
+                            close: function () {
+                                // console.log('close')
+                                toggleWindow('#popup_errer_box')
+                            }
+                        },
+                        hideBox: ''
+                    };
+                    def = $.extend(options,def);
+                    console.log(def);
+                    $("#popup_msg_content").html(def.content);
+                    toggleWindow('#popup_errer_box', def.hideBox);
+                    if(def.action.ok){
+                        $("#popup_msg_ok").show();
+                        $("#popup_msg_ok").on('click', def.action.ok)
+                    }
+                    if(def.action.cancel){
+                        $("#popup_msg_cancel").show();
+                        $("#popup_msg_cancel").on('click', def.action.cancel)
+                    }
+                    $("#close").show();
+                    console.log($("#close"))
+                    $("#close").on('click', def.action.close)
+                }
+                $('button').click(function(){
+                    showMsgBox({
+                        content: '系统错误',
+                        action: {
+                            ok: function (){
+                                console.log('我是ok按钮');
+                                toggleWindow('#popup_errer_box')
+                            },
+                            cancel: function (){
+                                console.log('我是cancel按钮');
+                                toggleWindow('#popup_errer_box')
+                            }
+                        }
+                    });
+                    $("#popup_msg_cancel").hide();
+                    $("#popup_msg_ok").text('我要登陆');
+                })
+
+            })
+        })();
+    </script>
+</body>
+
+</html>
