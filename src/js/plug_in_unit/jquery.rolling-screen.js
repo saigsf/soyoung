@@ -1,3 +1,10 @@
+/*
+* @Author: saigsf<qq: 2270029397 email: sai_gsf@163.com>
+* @Date:   2017-12-12
+* @Last Modified by:   M S I
+* @Last Modified time: 2017-12-26
+*/
+// 可以进一步更新
 $(function() {
     let $container = $(".container");
     let nowPage = 0;

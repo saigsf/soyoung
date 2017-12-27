@@ -1,13 +1,11 @@
+/*
+* @Author: saigsf<qq: 2270029397 email: sai_gsf@163.com>
+* @Date:   2017-12-26
+* @Last Modified by:   M S I
+* @Last Modified time: 2017-12-26
+*/
+// 图片切换
 function carousel(data) {
-    /**
-     * 基于jQuery
-     * data 格式为json
-     * data={
-     *      el
-     * 
-     * 
-     * }
-     */
     // 元素
     var el = data.el.find(".carousel-item");
     if (!el) {
