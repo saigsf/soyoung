@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/common/reset.min.css">
+  <style>
+    .container {
+      margin: 50px auto;
+      width: 800px;
+      height: 450px;
+      line-height: 0;
+      font-size: 0;
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-perspective: 500px;
+      perspective: 500px;
+    }
+
+    .container div {
+      background-image: url("../img/1490073118356.jpg");
+      background-repeat: no-repeat;
+      display: inline-block;
+      position: relative;
+      top: 0;
+      left: 0;
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="container"></div>
+  <script src="../js/common/jquery.js"></script>
+  <script src="../js/plug_in_unit/jquery.division.js"></script>
+  <script>
+    var BASE_URL = 'http://localhost:3000/src/img/'
+    var imgURLArr = [BASE_URL + 'group_01/1.jpg', BASE_URL + 'group_01/2.jpg', BASE_URL + 'group_01/3.jpg', BASE_URL + 'group_01/4.jpg', BASE_URL + 'group_01/5.jpg', BASE_URL + 'group_01/6.jpg'];
+    var division = $('#container').division({
+      imgURL: imgURLArr,
+      imgIsAutoChange: true,  
+      splitType: '',   
+      n: 0,
+      col: 4,
+      row: 3,
+    });
+    console.log(division)
+    
+  </script>
+</body>
+
+</html>
